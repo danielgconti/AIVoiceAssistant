@@ -19,7 +19,7 @@ def voice():
     response = VoiceResponse()
 
     response.say(
-        "Hello! This is an automated call from my AI voice assistant.",
+        "Hello! This is an automated call from my AI voice assistant. Hello! This is an automated call from my AI voice assistant. Hello! This is an automated call from my AI voice assistant.  Hello! This is an automated call from my AI voice assistant.",
         voice="alice"
     )
 
