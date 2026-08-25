@@ -1,0 +1,1 @@
+1. Next step is to set up a server, and configure it to say something specific when an outbound call is placed
