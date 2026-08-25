@@ -1,11 +1,25 @@
-"""Place a test call: our caller plays a patient, the number you dial answers.
+# Download the helper library from https://www.twilio.com/docs/python/install
+import os
+from twilio.rest import Client
+from dotenv import load_dotenv
+from twilio.twiml.voice_response import Record, VoiceResponse
 
-Pick the scenario the caller should run -- each one probes a different weak
-spot in the doctor's-office assistant on the other end:
+# Load the environment variables
+load_dotenv()
 
-    python index.py                    # menu
-    python index.py invalid-dates      # straight to one
-    python index.py --list             # just print them
+# Find your Account SID and Auth Token at twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+account_sid = os.environ["TWILIO_ACCOUNT_SID"]
+auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+client = Client(account_sid, auth_token)
+
+call = client.calls.create(
+    url="http://demo.twilio.com/docs/voice.xml",
+    to="REDACTED_PHONE_NUMBER",
+    from_="REDACTED_PHONE_NUMBER",
+)
+
+print(call.sid)"""Place an outbound call that hands the conversation to the assistant.
 
 Running this costs money and rings a real phone. The server runs on your
 machine, so Twilio reaches it through an ngrok tunnel:
