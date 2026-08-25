@@ -15,7 +15,7 @@ client = Client(account_sid, auth_token)
 
 def callTwilio():
     call = client.calls.create(
-    url="http://demo.twilio.com/docs/voice.xml",
+    url="https://aivoiceassistant-production-6cb1.up.railway.app/voice",
     to="REDACTED_PHONE_NUMBER",
     from_="REDACTED_PHONE_NUMBER",
     )
