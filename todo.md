@@ -1,4 +1,4 @@
-1. Next step is to set up a server, and configure it to say something specific when an outbound call is placed1. ~~Set up a server, and configure it to say something specific when an outbound call is placed~~
+1. ~~Set up a server, and configure it to say something specific when an outbound call is placed~~
 2. ~~Hold a real conversation via OpenAI's Realtime API, with barge-in~~
 3. ~~Save the call audio and transcript~~
 4. ~~Turn the caller into a tester: 10 selectable edge-case scenarios against a doctor's office~~

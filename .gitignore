@@ -1,7 +1,5 @@
 .env
 venv
-.env
-venv
 recordings
 __pycache__
 # Call audio is large and is the raw recording; the reports and transcripts
