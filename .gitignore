@@ -1,2 +1,4 @@
 .env
 venv
+recordings
+__pycache__

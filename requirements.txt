@@ -1,4 +1,5 @@
 twilio
-dotenv
-flask
-gunicorn
+python-dotenv
+fastapi
+uvicorn[standard]
+websockets
