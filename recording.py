@@ -14,10 +14,13 @@ caller's clock has not been played yet, so it can simply be dropped.
 """
 
 import json
+import logging
 import struct
 import wave
 from datetime import datetime, timezone
 from pathlib import Path
+
+log = logging.getLogger("recorder")
 
 SAMPLE_RATE = 8000
 SILENCE = 0xFF  # mu-law encoding of zero
@@ -91,6 +94,11 @@ class CallRecorder:
     def save(self):
         """Write <basename>.wav / .json / .txt. Returns the paths written."""
         if not self._caller and not self._agent:
+            log.warning(
+                "nothing recorded for call %s -- no audio arrived in either "
+                "direction",
+                self.call_sid or self.stream_sid,
+            )
             return {}
 
         self.out_dir.mkdir(parents=True, exist_ok=True)
@@ -138,4 +146,13 @@ class CallRecorder:
             + "\n"
         )
 
+        log.info(
+            "wrote %.1fs of audio (%d caller / %d assistant seconds) and %d "
+            "transcript lines to %s.*",
+            self.duration,
+            len(self._caller) // SAMPLE_RATE,
+            len(self._agent) // SAMPLE_RATE,
+            len(self.transcript),
+            base,
+        )
         return {"audio": wav_path, "json": json_path, "text": txt_path}

@@ -24,7 +24,14 @@ export OPENAI_API_KEY=...
 The server must be reachable from the public internet — Twilio dials it. Either deploy it, or tunnel:
 
 ```bash
-python server.py                      # terminal 1
-ngrok http 5000                       # terminal 2
+python server.py                      # terminal 1 (:5050)
+ngrok http 5050                       # terminal 2
 PUBLIC_URL=https://<id>.ngrok.app python index.py   # places the call
+```
+
+## When a call fails
+
+```bash
+python debug_twilio.py     # checks config, the deployed server, and Twilio's own error log
+LOG_LEVEL=DEBUG python server.py
 ```
