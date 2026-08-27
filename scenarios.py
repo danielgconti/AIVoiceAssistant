@@ -28,12 +28,6 @@ class Scenario:
     max_seconds: int
     body: str
     checks: list = field(default_factory=list)
-    number: int = 0  # menu position, filled in below; also names the files
-
-    @property
-    def label(self):
-        """What goes in a filename: "03-marathon"."""
-        return f"{self.number:02d}-{self.slug}"
 
     @property
     def instructions(self):
@@ -379,9 +373,6 @@ since you will run out before the next available appointment.
     ),
 ]
 
-for position, scenario in enumerate(SCENARIOS, start=1):
-    scenario.number = position
-
 BY_SLUG = {scenario.slug: scenario for scenario in SCENARIOS}
 DEFAULT = SCENARIOS[0]
 
@@ -392,8 +383,8 @@ def get(slug):
 
 def listing():
     lines = []
-    for scenario in SCENARIOS:
-        lines.append(f"{scenario.number:>3}. {scenario.slug:<20} {scenario.title}")
+    for index, scenario in enumerate(SCENARIOS, start=1):
+        lines.append(f"{index:>3}. {scenario.slug:<20} {scenario.title}")
         lines.append(f"     {'':<20} probes: {scenario.probes} ({scenario.minutes})")
     return "\n".join(lines)
 
