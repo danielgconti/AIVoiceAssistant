@@ -2,4 +2,5 @@ twilio
 python-dotenv
 fastapi
 uvicorn[standard]
+python-multipart
 websockets
