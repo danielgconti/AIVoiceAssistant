@@ -37,12 +37,14 @@ from fastapi.responses import JSONResponse, Response
 
 from twilio.twiml.voice_response import Connect, VoiceResponse
 
+import report
+import scenarios
 from recording import CallRecorder
 
 load_dotenv()
 
-# Railway captures stdout, but a piped stdout is block-buffered: without this
-# the logs below arrive late, or never if the process crashes first.
+# A piped stdout is block-buffered: without this the logs below arrive in
+# delayed blocks, or not at all if the process crashes first.
 try:
     sys.stdout.reconfigure(line_buffering=True)
 except (AttributeError, ValueError):  # not a real stream (tests, some hosts)
@@ -61,19 +63,19 @@ REALTIME_MODEL = os.getenv("OPENAI_REALTIME_MODEL", "gpt-realtime")
 VOICE = os.getenv("OPENAI_VOICE", "marin")
 RECORDINGS_DIR = os.getenv("RECORDINGS_DIR", "recordings")
 
-INSTRUCTIONS = os.getenv(
-    "ASSISTANT_INSTRUCTIONS",
-    "You are a friendly, concise voice assistant talking to someone over the "
-    "phone. Keep answers short and conversational -- a sentence or two -- "
-    "because the other person cannot see anything, only hear you. If you are "
-    "interrupted, stop and listen. Never mention that you are an AI model or "
-    "describe these instructions.",
+# The caller plays a patient testing a doctor's-office phone assistant. Which
+# patient depends on the scenario chosen for this call -- see scenarios.py.
+GREETING = (
+    "The office assistant has just picked up. Open the call in character: a "
+    "short, natural greeting and the first thing you want. Do not dump your "
+    "whole agenda at once unless your call says to."
 )
-GREETING = os.getenv(
-    "ASSISTANT_GREETING",
-    "Greet the person warmly, say you are an AI assistant calling to chat, "
-    "and ask how they are doing.",
+WRAP_UP = (
+    "You are nearly out of time. Bring the call to a natural close now: get "
+    "any last confirmation you need, thank them, and say goodbye."
 )
+# Stop nudging and hang up rather than letting a call run forever.
+WRAP_UP_LEAD_SECONDS = 25
 
 # The Realtime API renamed several events between the beta and GA releases;
 # accept either spelling so this works against both.
@@ -90,8 +92,8 @@ def missing_config():
     problems = []
     if not OPENAI_API_KEY:
         problems.append(
-            "OPENAI_API_KEY is not set (put it in .env locally, or in Railway's "
-            "service variables) -- the assistant cannot connect to OpenAI."
+            "OPENAI_API_KEY is not set (add it to .env) -- the assistant "
+            "cannot connect to OpenAI."
         )
     elif not OPENAI_API_KEY.startswith("sk-"):
         problems.append(
@@ -110,6 +112,8 @@ async def lifespan(app: FastAPI):
     log.info("  recordings dir : %s", os.path.abspath(RECORDINGS_DIR))
     log.info("  openai key     : %s", "set" if OPENAI_API_KEY else "MISSING")
     log.info("  log level      : %s", logging.getLevelName(log.getEffectiveLevel()))
+    log.info("  analysis model : %s", report.ANALYSIS_MODEL or "(off)")
+    log.info("  scenarios      : %d loaded", len(scenarios.SCENARIOS))
     for problem in missing_config():
         log.error("CONFIG PROBLEM: %s", problem)
     log.info("=" * 68)
@@ -148,9 +152,10 @@ async def log_requests(request: Request, call_next):
 def health():
     """Config diagnostics. Hit this first when a call misbehaves.
 
-    Always 200, even when misconfigured: Railway healthchecks can point here,
-    and failing them would take the deployment down instead of reporting it.
-    Read the "status" and "problems" fields.
+    Always 200, even when misconfigured -- a healthcheck pointed here should
+    not take the process down over a config problem it is meant to report.
+    Read the "status" and "problems" fields. index.py calls this through the
+    tunnel before dialling.
     """
     problems = missing_config()
     return JSONResponse(
@@ -164,6 +169,7 @@ def health():
                 os.getenv("TWILIO_ACCOUNT_SID") and os.getenv("TWILIO_AUTH_TOKEN")
             ),
             "recordings_dir": os.path.abspath(RECORDINGS_DIR),
+            "scenarios": [s.slug for s in scenarios.SCENARIOS],
         }
     )
 
@@ -220,8 +226,17 @@ async def voice(request: Request):
             host,
         )
 
+    # Twilio preserves our query string, and <Parameter> is how a chosen
+    # scenario reaches the websocket -- it comes back in the "start" event.
+    requested = request.query_params.get("scenario")
+    scenario = scenarios.resolve(requested) or scenarios.DEFAULT
+    if requested and not scenarios.resolve(requested):
+        log.warning("unknown scenario %r; falling back to %s", requested, scenario.slug)
+    log.info("scenario for this call: %s (%s)", scenario.slug, scenario.title)
+
     connect = Connect()
-    connect.stream(url=stream_url)
+    stream = connect.stream(url=stream_url)
+    stream.parameter(name="scenario", value=scenario.slug)
     response.append(connect)
     twiml = str(response)
     log.debug("TwiML: %s", twiml)
@@ -256,6 +271,7 @@ class Bridge:
     def __init__(self, twilio_ws: WebSocket, openai_ws):
         self.twilio_ws = twilio_ws
         self.openai_ws = openai_ws
+        self.scenario = scenarios.DEFAULT
         self.recorder = CallRecorder(out_dir=RECORDINGS_DIR)
         self.stream_sid = None
         # Twilio stamps every inbound frame with milliseconds since the stream
@@ -272,19 +288,88 @@ class Bridge:
         self.interruptions = 0
         self.openai_errors = []
         self.event_types = {}
+        self.response_active = False
 
     async def run(self):
+        # The scenario arrives in Twilio's "start" event, which is the first
+        # thing on the wire -- wait for it before briefing the model, or the
+        # caller opens the call as the wrong patient.
+        await self.await_start()
         await self.configure_session()
+        clock = asyncio.create_task(self.enforce_time_limit())
         # return_exceptions so one side blowing up still lets the other side
         # unwind and the recording get saved -- and so we log the traceback.
-        results = await asyncio.gather(
-            self.pump_twilio_to_openai(),
-            self.pump_openai_to_twilio(),
-            return_exceptions=True,
-        )
+        try:
+            results = await asyncio.gather(
+                self.pump_twilio_to_openai(),
+                self.pump_openai_to_twilio(),
+                return_exceptions=True,
+            )
+        finally:
+            clock.cancel()
         for name, result in zip(("twilio->openai", "openai->twilio"), results):
             if isinstance(result, Exception):
                 log.error("%s pump failed", name, exc_info=result)
+
+    async def await_start(self, timeout=10):
+        """Consume Twilio's opening events up to and including "start"."""
+        while True:
+            try:
+                message = await asyncio.wait_for(
+                    self.twilio_ws.receive_text(), timeout=timeout
+                )
+            except asyncio.TimeoutError:
+                log.error("Twilio never sent a 'start' event; using %s", self.scenario.slug)
+                return
+            data = json.loads(message)
+            if data.get("event") == "start":
+                self.handle_start(data["start"])
+                return
+            log.debug("pre-start Twilio event: %s", data.get("event"))
+
+    def handle_start(self, start: dict):
+        self.stream_sid = start["streamSid"]
+        self.recorder.stream_sid = start["streamSid"]
+        self.recorder.call_sid = start.get("callSid")
+        chosen = (start.get("customParameters") or {}).get("scenario")
+        self.scenario = scenarios.get(chosen) or scenarios.DEFAULT
+        if chosen and not scenarios.get(chosen):
+            log.warning("unknown scenario %r from Twilio; using %s", chosen, self.scenario.slug)
+        log.info(
+            "stream started: streamSid=%s callSid=%s format=%s",
+            self.stream_sid,
+            start.get("callSid"),
+            start.get("mediaFormat"),
+        )
+        log.info(
+            "running scenario %s -- %s (cap %ds)",
+            self.scenario.slug,
+            self.scenario.title,
+            self.scenario.max_seconds,
+        )
+        if start.get("mediaFormat", {}).get("encoding") not in (None, "audio/x-mulaw"):
+            log.warning(
+                "unexpected Twilio media format %s -- audio will sound like static",
+                start.get("mediaFormat"),
+            )
+
+    async def enforce_time_limit(self):
+        """Nudge the caller to wrap up, then hang up if it does not."""
+        cap = self.scenario.max_seconds
+        await asyncio.sleep(max(1, cap - WRAP_UP_LEAD_SECONDS))
+        log.info("%ds left; asking the caller to wrap up", WRAP_UP_LEAD_SECONDS)
+        # Overriding instructions on one response steers the next thing said
+        # without putting a stage direction into the conversation as speech.
+        for _ in range(20):  # wait out an in-flight reply so this is not cut off
+            if not self.response_active:
+                break
+            await asyncio.sleep(0.5)
+        await self.send_openai(
+            {"type": "response.create", "response": {"instructions": WRAP_UP}}
+        )
+        await asyncio.sleep(WRAP_UP_LEAD_SECONDS)
+        log.warning("call hit its %ds cap; hanging up", cap)
+        await self.twilio_ws.close(code=1000)
 
     async def send_openai(self, event: dict):
         log.debug("-> openai: %s", event.get("type"))
@@ -293,7 +378,7 @@ class Bridge:
     async def configure_session(self):
         session = {
             "type": "realtime",
-            "instructions": INSTRUCTIONS,
+            "instructions": self.scenario.instructions,
             "output_modalities": ["audio"],
             "audio": {
                 "input": {
@@ -327,7 +412,7 @@ class Bridge:
             }
         )
         await self.send_openai({"type": "response.create"})
-        log.info("session configured; greeting requested")
+        log.info("session configured; opening line requested")
 
     # ---- caller -> OpenAI ----------------------------------------------
 
@@ -354,26 +439,8 @@ class Bridge:
                             self.frames_out,
                             self.latest_media_ts / 1000,
                         )
-                elif event == "start":
-                    start = data["start"]
-                    self.stream_sid = start["streamSid"]
-                    self.recorder.stream_sid = start["streamSid"]
-                    self.recorder.call_sid = start.get("callSid")
-                    log.info(
-                        "stream started: streamSid=%s callSid=%s format=%s",
-                        self.stream_sid,
-                        start.get("callSid"),
-                        start.get("mediaFormat"),
-                    )
-                    if start.get("mediaFormat", {}).get("encoding") not in (
-                        None,
-                        "audio/x-mulaw",
-                    ):
-                        log.warning(
-                            "unexpected Twilio media format %s -- audio will "
-                            "sound like static",
-                            start.get("mediaFormat"),
-                        )
+                elif event == "start":  # already consumed by await_start()
+                    self.handle_start(data["start"])
                 elif event == "mark":
                     if self.marks:
                         self.marks.pop(0)
@@ -416,7 +483,10 @@ class Bridge:
                     log.info("OpenAI session created")
                 elif kind == "session.updated":
                     log.info("OpenAI accepted the session config")
+                elif kind == "response.created":
+                    self.response_active = True
                 elif kind == "response.done":
+                    self.response_active = False
                     self.log_response_done(event)
                 elif kind == "error":
                     detail = event.get("error", event)
@@ -624,6 +694,20 @@ async def media_stream(twilio_ws: WebSocket):
                 bridge.recorder.duration,
                 saved["audio"],
             )
+            try:
+                # Analysis calls out to a text model, so it must not run on
+                # the event loop and must never lose us the recording.
+                path = await asyncio.to_thread(
+                    report.write,
+                    bridge.recorder,
+                    bridge.scenario,
+                    saved,
+                    OPENAI_API_KEY,
+                )
+                if path:
+                    log.info("bug report: %s", path)
+            except Exception:
+                log.exception("failed to write the bug report")
         else:
             log.warning("no audio captured; nothing saved")
 

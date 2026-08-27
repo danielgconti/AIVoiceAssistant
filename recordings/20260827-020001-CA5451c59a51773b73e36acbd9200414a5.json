@@ -1,0 +1,29 @@
+{
+  "call_sid": "CA5451c59a51773b73e36acbd9200414a5",
+  "stream_sid": "MZ2c8ba3ab6356bed0ab6eaee4d8f22097",
+  "started_at": "2026-08-27T02:00:01.032586+00:00",
+  "duration_seconds": 15.42,
+  "audio_file": "20260827-020001-CA5451c59a51773b73e36acbd9200414a5.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 3.54,
+      "text": "Hi, if you record your name..."
+    },
+    {
+      "role": "assistant",
+      "at": 4.3,
+      "text": "Hello there! I'm your AI assistant calling to chat. How are you doing today?"
+    },
+    {
+      "role": "caller",
+      "at": 12.12,
+      "text": "Hi, I'm good. How are you?"
+    },
+    {
+      "role": "assistant",
+      "at": 12.6,
+      "text": "I'm doing great, thanks for asking! What's on your mind today?"
+    }
+  ]
+}

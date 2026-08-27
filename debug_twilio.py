@@ -5,7 +5,7 @@
 Checks, in the order things usually break:
 
 1. local configuration -- are the three credentials actually present
-2. the deployed server -- is it up, and does /voice return usable TwiML
+2. the tunnel -- is ngrok up, and does /voice through it return usable TwiML
 3. recent calls -- how Twilio says they ended
 4. Twilio's debugger alerts -- Twilio's own record of why it gave up
 
@@ -22,13 +22,13 @@ import urllib.request
 
 from dotenv import load_dotenv
 
+from tunnel import local_port, ngrok_tunnel, no_tunnel_help, public_url
+
 load_dotenv()
 
 ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
-PUBLIC_URL = os.getenv(
-    "PUBLIC_URL", "https://aivoiceassistant-production-6cb1.up.railway.app"
-).rstrip("/")
+PUBLIC_URL = public_url()
 
 
 def section(title):
@@ -43,9 +43,14 @@ def check_config():
             print(f"  OK      {name} = {value[:6]}...{value[-4:]} ({len(value)} chars)")
         else:
             print(f"  MISSING {name}")
-    print(f"  server  {PUBLIC_URL}")
-    print("\n  Note: these are *your machine's* variables. The deployed server")
-    print("  reads its own -- check those in Railway's service settings.")
+    tunnel_url, forwarded_to = ngrok_tunnel()
+    if PUBLIC_URL:
+        source = "PUBLIC_URL" if os.getenv("PUBLIC_URL") else "ngrok"
+        print(f"  OK      tunnel ({source}) = {PUBLIC_URL}")
+        if forwarded_to:
+            print(f"          forwarding to {forwarded_to} (server port is {local_port()})")
+    else:
+        print("  MISSING tunnel -- ngrok is not running and PUBLIC_URL is unset")
 
 
 def fetch(url, data=None):
@@ -64,13 +69,18 @@ def fetch(url, data=None):
 
 
 def check_server():
-    section("2. the deployed server")
+    section("2. the tunnel and the local server behind it")
+    if not PUBLIC_URL:
+        print("  skipped: " + no_tunnel_help().replace("\n", "\n  "))
+        return
 
     status, body = fetch(f"{PUBLIC_URL}/")
     print(f"  GET  / -> {status}")
     if status is None:
-        print(f"  the server is unreachable: {body}")
+        print(f"  unreachable through the tunnel: {body}")
         print("  Twilio cannot reach it either, so every call will fail.")
+        print(f"  Check that `python server.py` is running on port {local_port()}")
+        print("  and that ngrok is forwarding to that same port.")
         return
     try:
         for key, value in json.loads(body).items():
@@ -155,15 +165,14 @@ def explain(alert, fields):
     if str(alert.error_code) == "11200":
         print("    ->  Twilio could not get a usable response from the webhook.")
         if "502" in message or "503" in message or "504" in message:
-            print("        A 5xx from Railway means the app is not running. The")
-            print("        usual cause after this rewrite is Railway still using")
-            print("        'gunicorn server:app' as its start command -- gunicorn's")
-            print("        default worker cannot run an ASGI app like FastAPI.")
-            print("        Set the start command to:")
-            print("          uvicorn server:app --host 0.0.0.0 --port $PORT")
-            print("        and make sure OPENAI_API_KEY is set in Railway too.")
+            print("        A 5xx here means the tunnel was up but nothing usable")
+            print("        was behind it -- `python server.py` not running, or")
+            print("        ngrok forwarding to a different port than the server.")
+        elif "11200" in message or "timeout" in message.lower():
+            print("        The server did not answer in time. Look for the")
+            print("        matching /voice line in the server terminal.")
         else:
-            print("        Check the server logs for the request logged at that time.")
+            print("        Check the server terminal for the request at that time.")
     elif str(alert.error_code) == "11205":
         print("    ->  Twilio could not connect to the webhook host at all.")
     elif str(alert.error_code) == "12100":
