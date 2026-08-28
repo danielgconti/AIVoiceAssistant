@@ -1,0 +1,40 @@
+{
+  "scenario": "08-cancel-undo",
+  "call_sid": "CAfe0f5102a0d88946b8ea218a68108b37",
+  "stream_sid": "MZ28e82bd30b3d6c731e1d19428c58fc31",
+  "started_at": "2026-08-28T00:14:52.291933+00:00",
+  "duration_seconds": 180.4,
+  "audio_file": "20260828-001452-08-cancel-undo-CAfe0f5102a0d88946b8ea218a68108b37.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.58,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "assistant",
+      "at": 6.82,
+      "text": "No hay problema, espa\u00f1ol,"
+    },
+    {
+      "role": "caller",
+      "at": 7.02,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 13.36,
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 14.26,
+      "text": "Ah, hola, s\u00ed, necesito cancelar la cita que tengo con el Dr. Osei para la pr\u00f3xima semana."
+    },
+    {
+      "role": "assistant",
+      "at": 157.12,
+      "text": "Entendido, voy a ayudarte con eso. \u00bfMe podr\u00edas confirmar tu nombre completo para localizar tu cita en el sistema?"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[   4.58s]    caller: This call may be recorded for quality and training purposes.
+[   6.82s] assistant: No hay problema, español,
+[   7.02s]    caller: Para español, oprima el dos.
+[  13.36s]    caller: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[  14.26s] assistant: Ah, hola, sí, necesito cancelar la cita que tengo con el Dr. Osei para la próxima semana.
+[ 157.12s] assistant: Entendido, voy a ayudarte con eso. ¿Me podrías confirmar tu nombre completo para localizar tu cita en el sistema?

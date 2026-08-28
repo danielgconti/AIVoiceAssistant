@@ -1,0 +1,50 @@
+{
+  "scenario": "05-interruptions",
+  "call_sid": "CAe482d11b87c7bd123042384cc43cce8a",
+  "stream_sid": "MZdd64082345789cd240a674a05d09a0c0",
+  "started_at": "2026-08-28T00:05:19.847832+00:00",
+  "duration_seconds": 53.42,
+  "audio_file": "20260828-000519-05-interruptions-CAe482d11b87c7bd123042384cc43cce8a.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.5,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "caller",
+      "at": 6.98,
+      "text": "para espa\u00f1ol oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 13.36,
+      "text": "Thanks for calling Pivot Point Orthopedics, part of PrettyGoodAI. How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 14.38,
+      "text": "Uh, hey, I think I got the wrong place. I\u2019m trying to reach Northside Family Medicine. Are you them?"
+    },
+    {
+      "role": "caller",
+      "at": 32.74,
+      "text": "This is Pivot Point Orthopedics, not Northside Family Medicine. We focus on orthopedic care and physical therapy. Would you like help with anything related to our clinic?"
+    },
+    {
+      "role": "assistant",
+      "at": 34.12,
+      "text": "Oh, no, sorry, that's not what I'm looking for. I need Northside Family Medicine. I must\u2019ve pressed something wrong. Let me hang up and try again."
+    },
+    {
+      "role": "caller",
+      "at": 50.68,
+      "text": "No problem at all. Good luck reaching Northside Family Medicine. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "at": 50.98,
+      "text": "Thanks, you too. Bye."
+    }
+  ]
+}

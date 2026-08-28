@@ -1,0 +1,13 @@
+[   1.64s] assistant: Hi there, this is Jordan Reyes. I'd like to schedule a check-up with Dr. Osei. Could we look at February 30th,
+[   3.88s]    caller: Hi, if you record...
+[   4.94s] assistant: Uh, hi, I’m trying to set up a check-up with Dr. Osei. I was thinking maybe February 30th?
+[  13.24s] assistant: Oh, wait, is that not a
+[  13.38s]    caller: Yeah, I think...
+[  15.76s]    caller: That's not a real date.
+[  15.98s] assistant: Oh, right, okay. How about last Monday then?
+[  18.90s]    caller: Okay, also...
+[  19.20s] assistant: Got it, no problem. How about last Monday, then?
+[  25.70s]    caller: Last Monday works.
+[  26.70s] assistant: Oh, that’s already gone by, hasn’t it? All right, let me try this: how about next Tuesday the 40th?
+[  38.30s]    caller: Yeah, that works too.
+[  38.96s] assistant: Oh, wait, that doesn't sound right either. Let me think. Maybe just the 3rd?

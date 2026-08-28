@@ -46,7 +46,7 @@ log = logging.getLogger("caller")
 
 account_sid = os.getenv("TWILIO_ACCOUNT_SID")
 auth_token = os.getenv("TWILIO_AUTH_TOKEN")
-to_number = os.getenv("TO_NUMBER", "REDACTED_PHONE_NUMBER")
+to_number = os.getenv("TO_NUMBER", "+REDACTED_PHONE_NUMBER")
 from_number = os.getenv("FROM_NUMBER", "REDACTED_PHONE_NUMBER")
 
 client = Client(account_sid, auth_token)

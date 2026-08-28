@@ -70,12 +70,16 @@ cap, and the call is hung up at the cap if it has not.
 In `recordings/`, sharing one basename per call:
 
 ```
-20260827-141203-CAxxxx.wav    stereo — our caller left, the office assistant right
-                      .txt    readable transcript with timestamps
-                      .json   transcript plus call metadata
-                      .md     the bug report
-recordings/BUGS.md            one line per call, linking to each report
+20260827-141203-08-cancel-undo-CAxxxx.wav    stereo — our caller left, the office assistant right
+                                     .txt    readable transcript with timestamps
+                                     .json   transcript plus call metadata
+                                     .md     the bug report
+recordings/BUGS.md                           one line per call, linking to each report
 ```
+
+The name is `<when>-<NN-scenario>-<call sid>`, so the directory sorts by time and you can still see at
+a glance which of the ten prompts a file came from (and `ls recordings/*-08-*` picks out one
+scenario's calls).
 
 The bug report names the scenario, lists the bugs found in the transcript, flags anything the scenario
 meant to probe but never reached, and leaves a checklist and a notes section for your own review.

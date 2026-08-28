@@ -48,10 +48,13 @@ def ulaw_to_pcm16(data: bytes) -> bytes:
 class CallRecorder:
     """Accumulates both audio legs plus the running transcript of one call."""
 
-    def __init__(self, out_dir="recordings", call_sid=None, stream_sid=None):
+    def __init__(self, out_dir="recordings", call_sid=None, stream_sid=None,
+                 scenario_label=None):
         self.out_dir = Path(out_dir)
         self.call_sid = call_sid
         self.stream_sid = stream_sid
+        # Set once the scenario is known, which is when Twilio sends "start".
+        self.scenario_label = scenario_label
         self.started_at = datetime.now(timezone.utc)
         self._caller = bytearray()  # inbound mu-law; doubles as the call clock
         self._agent = bytearray()  # outbound mu-law, aligned to the same clock
@@ -88,8 +91,12 @@ class CallRecorder:
         return max(len(self._caller), len(self._agent)) / SAMPLE_RATE
 
     def _basename(self) -> str:
-        stamp = self.started_at.strftime("%Y%m%d-%H%M%S")
-        return f"{stamp}-{self.call_sid or self.stream_sid or 'call'}"
+        """<when>-<NN-scenario>-<call sid>: sorts by time, groups by scenario."""
+        parts = [self.started_at.strftime("%Y%m%d-%H%M%S")]
+        if self.scenario_label:
+            parts.append(self.scenario_label)
+        parts.append(self.call_sid or self.stream_sid or "call")
+        return "-".join(parts)
 
     def save(self):
         """Write <basename>.wav / .json / .txt. Returns the paths written."""
@@ -126,6 +133,7 @@ class CallRecorder:
         json_path.write_text(
             json.dumps(
                 {
+                    "scenario": self.scenario_label,
                     "call_sid": self.call_sid,
                     "stream_sid": self.stream_sid,
                     "started_at": self.started_at.isoformat(),

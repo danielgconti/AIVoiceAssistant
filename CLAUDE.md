@@ -109,6 +109,12 @@ decoded to 16-bit PCM and written as one stereo WAV (caller left, assistant righ
 alongside `.json` and `.txt` transcripts. mu-law decoding is a hand-rolled 256-entry table because
 `audioop` was removed in Python 3.13.
 
+Files are named `<when>-<NN-scenario>-<call sid>` (`20260827-141203-08-cancel-undo-CAxxxx.wav`). The
+number is the scenario's menu position, assigned from its index in `SCENARIOS` — so reordering that
+list renumbers past filenames' meaning. Append rather than reorder. `CallRecorder.scenario_label` is
+set in `handle_start`, not in the constructor, because the scenario is not known until Twilio sends
+the `start` event.
+
 WSGI does not do websockets, which is why this is FastAPI/uvicorn rather than Flask/gunicorn.
 
 Phone numbers default to hardcoded values in `index.py`, overridable via `TO_NUMBER`/`FROM_NUMBER`.

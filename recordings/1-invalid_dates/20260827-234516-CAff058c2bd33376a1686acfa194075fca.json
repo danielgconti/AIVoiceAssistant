@@ -1,0 +1,139 @@
+{
+  "call_sid": "CAff058c2bd33376a1686acfa194075fca",
+  "stream_sid": "MZf531fc22cd342229bac57fcc47552b38",
+  "started_at": "2026-08-27T23:45:16.563570+00:00",
+  "duration_seconds": 185.56,
+  "audio_file": "20260827-234516-CAff058c2bd33376a1686acfa194075fca.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.66,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "caller",
+      "at": 6.94,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "assistant",
+      "at": 7.42,
+      "text": "Hi there, this is Jordan Reyes. I\u2019m hoping to set up a check-up with Dr."
+    },
+    {
+      "role": "caller",
+      "at": 8.76,
+      "text": "Thank you."
+    },
+    {
+      "role": "assistant",
+      "at": 9.6,
+      "text": "Hi, yeah, I\u2019m looking to set up a check-up with Dr. Osei. Could you help me find a good time?"
+    },
+    {
+      "role": "caller",
+      "at": 25.56,
+      "text": "I can help with that. Before we look at available times, would you like to create a demo patient profile? I just need your first and last name to get started."
+    },
+    {
+      "role": "assistant",
+      "at": 25.78,
+      "text": "Oh, sure. It's Jordan Avery Reyes."
+    },
+    {
+      "role": "caller",
+      "at": 39.08,
+      "text": "Your patient profile is set up and your date of birth is July 4th, 2000. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 39.92,
+      "text": "Actually, my date of birth is March 14th, 1986. Let\u2019s fix that first."
+    },
+    {
+      "role": "caller",
+      "at": 54.9,
+      "text": "Let me update your date of birth to March 14, 1986. One moment while I take care of that."
+    },
+    {
+      "role": "assistant",
+      "at": 55.12,
+      "text": "Thanks, appreciate it."
+    },
+    {
+      "role": "caller",
+      "at": 74.74,
+      "text": "Thanks for letting me know. I'll update your date of birth to March 14, 1986, before we continue with scheduling your checkup with Dr. OC. One moment while I make that change. Let me update your date of birth to March 14, 1986, before we move forward with scheduling. One moment."
+    },
+    {
+      "role": "assistant",
+      "at": 75.4,
+      "text": "Got it, thanks. Now, let\u2019s see about that appointment. How about February 30th?"
+    },
+    {
+      "role": "caller",
+      "at": 94.56,
+      "text": "February does not have a 30th day. Would you like to look at available dates in late February or early March for your checkup with Dr. Osei? Do you have a preferred day of the week or time of day?"
+    },
+    {
+      "role": "assistant",
+      "at": 95.12,
+      "text": "Oh, I see. All right, how about last Monday?"
+    },
+    {
+      "role": "caller",
+      "at": 110.68,
+      "text": "Last Monday was August 24th. Would you like to schedule your checkup with Dr. Osei for an upcoming Monday instead, or do you have another date in mind?"
+    },
+    {
+      "role": "assistant",
+      "at": 111.24,
+      "text": "Oh, got it, that\u2019s passed. Let\u2019s try next Tuesday the 40th."
+    },
+    {
+      "role": "caller",
+      "at": 128.62,
+      "text": "There is no fortieth day in any month. Next Tuesday is September first. Would you like to look for available times on Tuesday, September first with Dr. Osei?"
+    },
+    {
+      "role": "assistant",
+      "at": 129.28,
+      "text": "Ah, right, no 40th. How about just the 3rd, any month?"
+    },
+    {
+      "role": "caller",
+      "at": 142.84,
+      "text": "I'll check for the next available third of the month with Dr. OC. Do you prefer mornings or afternoons?"
+    },
+    {
+      "role": "assistant",
+      "at": 143.26,
+      "text": "Mornings would be best for me, if there's something open."
+    },
+    {
+      "role": "caller",
+      "at": 156.82,
+      "text": "Before I check the schedule, I need to confirm the type of visit. Is this a general check-up or something else?"
+    },
+    {
+      "role": "assistant",
+      "at": 156.84,
+      "text": "It\u2019s a general check-up."
+    },
+    {
+      "role": "assistant",
+      "at": 159.34,
+      "text": "All right, I\u2019ve got that. Now, let\u2019s find the next available morning slot on the 3rd. Here we go. Thanks again, and take care!"
+    },
+    {
+      "role": "caller",
+      "at": 179.24,
+      "text": "The next available morning slot on Thursday, September 3rd is at 9 a.m. with Zed Bignew Likowski, MD. Would you like to book that appointment?"
+    },
+    {
+      "role": "assistant",
+      "at": 180.24,
+      "text": "Hmm, I was hoping to see Dr. Osei. Maybe we could try a different time? How about 3 in the morning?"
+    }
+  ]
+}

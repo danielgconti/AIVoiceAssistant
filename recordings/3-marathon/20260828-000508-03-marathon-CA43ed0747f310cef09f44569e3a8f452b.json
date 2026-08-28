@@ -1,0 +1,250 @@
+{
+  "scenario": "03-marathon",
+  "call_sid": "CA43ed0747f310cef09f44569e3a8f452b",
+  "stream_sid": "MZ9dcf0dc3f2d6bf75af4a8bfd9a07c926",
+  "started_at": "2026-08-28T00:05:08.931777+00:00",
+  "duration_seconds": 372.18,
+  "audio_file": "20260828-000508-03-marathon-CA43ed0747f310cef09f44569e3a8f452b.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.42,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "caller",
+      "at": 7.02,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 9.8,
+      "text": "Thanks for calling VividPoint Orthopedics."
+    },
+    {
+      "role": "caller",
+      "at": 12.98,
+      "text": "What a pretty good AI. How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 14.0,
+      "text": "Oh, hello there. Yeah, hi. I wanted to ask something about bloodwork, but let me think where to start."
+    },
+    {
+      "role": "caller",
+      "at": 26.34,
+      "text": "No problem, take your time. What would you like to know about blood work?"
+    },
+    {
+      "role": "assistant",
+      "at": 27.48,
+      "text": "Right, so, I was wondering, do I need to fast before coming in for bloodwork? Like, no food or water beforehand?"
+    },
+    {
+      "role": "caller",
+      "at": 47.26,
+      "text": "I recommend checking with your provider or the clinic staff for specific instructions, since fasting requirements can vary depending on the type of blood test."
+    },
+    {
+      "role": "caller",
+      "at": 51.62,
+      "text": "Would you like me to connect you with someone who can give you the exact details for your upcoming blood work?"
+    },
+    {
+      "role": "assistant",
+      "at": 53.62,
+      "text": "Well, I guess that might be helpful down the line. But before we get too deep, I should say, my daughter's appointment is actually the big one we're sorting out. Her name\u2019s Wren, and we\u2019ll get to that in a bit."
+    },
+    {
+      "role": "caller",
+      "at": 59.96,
+      "text": "Take your time. Let me..."
+    },
+    {
+      "role": "assistant",
+      "at": 61.56,
+      "text": "Thanks. You know, mornings are tricky for me before 10 because of the school run. So any bloodwork or appointments\u2014I have to keep that in mind."
+    },
+    {
+      "role": "caller",
+      "at": 72.78,
+      "text": "That makes sense."
+    },
+    {
+      "role": "caller",
+      "at": 81.96,
+      "text": "If you ever need to schedule blood work or an appointment, just let me know your preferred time of day, and I'll help you find something after 10 in the morning."
+    },
+    {
+      "role": "caller",
+      "at": 82.78,
+      "text": "Is there anything else I can help with right now?"
+    },
+    {
+      "role": "assistant",
+      "at": 85.8,
+      "text": "Yeah, actually, there\u2019s a couple things. One more quick note: we\u2019re going to be away the whole week after next, so that\u2019s out for scheduling. And, about the pharmacy\u2014the last refill from the Route 9 pharmacy, they got it wrong. I\u2019ve switched over to the Bell Street pharmacy now."
+    },
+    {
+      "role": "caller",
+      "at": 117.98,
+      "text": "Thanks for letting me know about the pharmacy change. If you need a medication refill or want to update your records, I can help with that."
+    },
+    {
+      "role": "caller",
+      "at": 118.2,
+      "text": "Would you like to update your pharmacy information now or request a refill?"
+    },
+    {
+      "role": "assistant",
+      "at": 119.48,
+      "text": "Let\u2019s go ahead and update that pharmacy to the Bell Street one. Then we can sort out a refill for my metformin after that."
+    },
+    {
+      "role": "caller",
+      "at": 130.42,
+      "text": "I see you're calling from the number we have on file."
+    },
+    {
+      "role": "caller",
+      "at": 132.44,
+      "text": "Am I speaking with Jordan Avery?"
+    },
+    {
+      "role": "assistant",
+      "at": 134.38,
+      "text": "Yeah, this is Jordan Avery Reyes. And actually, I prefer you call me on a different number for reminders\u2014555-0199. That\u2019s the best one to reach me."
+    },
+    {
+      "role": "caller",
+      "at": 148.28,
+      "text": "Thanks, Jordan. Can you please provide your date of birth?"
+    },
+    {
+      "role": "assistant",
+      "at": 148.84,
+      "text": "Sure, it\u2019s March 14th, 1986."
+    },
+    {
+      "role": "caller",
+      "at": 166.48,
+      "text": "I've documented your request to update your pharmacy to Bell Street Pharmacy."
+    },
+    {
+      "role": "caller",
+      "at": 176.94,
+      "text": "and your preferred contact number to 555-0199. The clinic support team will update your records and get back to you as soon as they can. Next, would you like to request your metformin refill now?"
+    },
+    {
+      "role": "assistant",
+      "at": 177.9,
+      "text": "Yes, let\u2019s do that. I need a refill on my metformin, the 500 milligrams. That would be great."
+    },
+    {
+      "role": "caller",
+      "at": 194.6,
+      "text": "I don't see any medications on your chart that I can refill right now. If you'd like, I can connect you to our patient support team for more help. Would you like to speak with someone directly?"
+    },
+    {
+      "role": "assistant",
+      "at": 195.84,
+      "text": "Hmm, that\u2019s odd. I\u2019ve been on that metformin for a while. Could you check again, maybe under Dr. Osei\u2019s care?"
+    },
+    {
+      "role": "caller",
+      "at": 217.66,
+      "text": "I'm not seeing any refillable medications listed in your chart, even under previous providers. If you'd like, I can connect you to our patient support team so they can look into this further for you. Would you like me to transfer you now?"
+    },
+    {
+      "role": "assistant",
+      "at": 219.18,
+      "text": "Well, before we transfer, can we go ahead and sort out my daughter Wren\u2019s appointment first? That\u2019s the one that really matters, and I want to make sure we get a good time."
+    },
+    {
+      "role": "caller",
+      "at": 236.4,
+      "text": "We can take care of Wren's appointment now. What type of visit does Wren need, or is there a specific provider you'd like to see?"
+    },
+    {
+      "role": "assistant",
+      "at": 238.22,
+      "text": "It\u2019s just a follow-up for Wren with Dr. Osei. Nothing too complicated, but it\u2019s got to be after 10, like I mentioned, because of the morning schedule."
+    },
+    {
+      "role": "caller",
+      "at": 253.28,
+      "text": "So to confirm, Ren needs a follow-up visit with Dr. Asay, is that correct?"
+    },
+    {
+      "role": "assistant",
+      "at": 254.62,
+      "text": "Yep, that\u2019s right. A follow-up with Dr. Osei, after 10, and remember, not the week after next\u2014we\u2019ll be away."
+    },
+    {
+      "role": "caller",
+      "at": 266.58,
+      "text": "There are"
+    },
+    {
+      "role": "caller",
+      "at": 270.16,
+      "text": "Several follow-up slots available with different providers."
+    },
+    {
+      "role": "caller",
+      "at": 277.22,
+      "text": "but I wanna make sure we get Wren in with Dr. Osei. Could you confirm if Dr. Osei goes by another name?"
+    },
+    {
+      "role": "caller",
+      "at": 285.88,
+      "text": "such as Dudy Hauser, Kelly Noble, or Karl Menz. Those are the providers with openings after 10 on Friday, August 28th."
+    },
+    {
+      "role": "assistant",
+      "at": 287.44,
+      "text": "That\u2019s strange. Dr. Osei has always been our doctor. Could you double-check the system? Maybe their full name is listed differently."
+    },
+    {
+      "role": "caller",
+      "at": 311.34,
+      "text": "I don't see Dr. Asay listed among the available providers for that date, but I can search other dates or check if they're listed under a different name. Would you like to try for a specific day, or should I look for the next available follow-up with Dr. Asay?"
+    },
+    {
+      "role": "assistant",
+      "at": 312.74,
+      "text": "Let\u2019s look for the next available follow-up with Dr. Osei, after 10 a.m., and not during the week I mentioned we\u2019ll be away."
+    },
+    {
+      "role": "caller",
+      "at": 339.18,
+      "text": "The next available follow-up appointments after 10 a.m. are with Doogie Howser, Carl Mintz, and Kelly Noble. I'm not seeing Dr. Osay listed. Would you like to book with one of these providers, or should I connect you to the clinic team to clarify Dr. Osay's availability?"
+    },
+    {
+      "role": "assistant",
+      "at": 340.44,
+      "text": "Let\u2019s go ahead and connect to the clinic team to clarify Dr. Osei\u2019s availability. We\u2019ve been seeing Dr. Osei for ages, so I want to be sure."
+    },
+    {
+      "role": "caller",
+      "at": 355.2,
+      "text": "Transferring you now. Thank you."
+    },
+    {
+      "role": "assistant",
+      "at": 355.5,
+      "text": "Oh, wait, before we do that,"
+    },
+    {
+      "role": "caller",
+      "at": 360.0,
+      "text": "Hello, you've reached the Pretty Good AI Test Line. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "at": 361.36,
+      "text": "Hello? Hmm, that\u2019s odd, it seems we got cut off. Let me know if we need to continue or start again."
+    }
+  ]
+}

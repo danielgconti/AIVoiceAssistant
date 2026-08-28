@@ -1,0 +1,39 @@
+{
+  "call_sid": "CA33d07984d78fb179c9273272dfa01860",
+  "stream_sid": "MZ29f274ef2a8479f9e417f130fb460d55",
+  "started_at": "2026-08-27T02:20:24.233364+00:00",
+  "duration_seconds": 30.53,
+  "audio_file": "20260827-022024-CA33d07984d78fb179c9273272dfa01860.wav",
+  "transcript": [
+    {
+      "role": "assistant",
+      "at": 1.14,
+      "text": "Hey there!"
+    },
+    {
+      "role": "caller",
+      "at": 7.02,
+      "text": "Hi, if you record your name and reason for calling, I'll see if this person is available."
+    },
+    {
+      "role": "assistant",
+      "at": 7.72,
+      "text": "Hello, I'm your AI assistant, just calling to chat and see how you're doing today. How are you feeling?"
+    },
+    {
+      "role": "caller",
+      "at": 17.58,
+      "text": "I'm feeling good, how are you?"
+    },
+    {
+      "role": "assistant",
+      "at": 18.26,
+      "text": "I'm glad to hear that! I'm doing great, thanks for asking. What\u2019s on your mind today?"
+    },
+    {
+      "role": "caller",
+      "at": 25.26,
+      "text": "Nothing?"
+    }
+  ]
+}

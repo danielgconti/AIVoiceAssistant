@@ -1,0 +1,6 @@
+[   1.14s] assistant: Hey there!
+[   7.02s]    caller: Hi, if you record your name and reason for calling, I'll see if this person is available.
+[   7.72s] assistant: Hello, I'm your AI assistant, just calling to chat and see how you're doing today. How are you feeling?
+[  17.58s]    caller: I'm feeling good, how are you?
+[  18.26s] assistant: I'm glad to hear that! I'm doing great, thanks for asking. What’s on your mind today?
+[  25.26s]    caller: Nothing?

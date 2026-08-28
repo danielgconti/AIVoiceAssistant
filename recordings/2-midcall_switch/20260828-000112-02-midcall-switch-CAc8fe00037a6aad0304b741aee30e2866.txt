@@ -1,0 +1,11 @@
+[   4.66s]    caller: This call may be recorded for quality and training purposes.
+[   6.96s]    caller: Para español, oprima el dos.
+[  11.68s]    caller: Thanks for calling Pivotpoint Orthopedics, part of PrettyGoodAI.
+[  13.28s]    caller: How may I help you today?
+[  14.66s] assistant: Ah, hola, sí, yo necesito agendar un chequeo físico en las próximas semanas. ¿Me puede ayudar con eso?
+[ 188.28s] assistant: Claro, con gusto. ¿Para qué fecha más o menos le gustaría agendar el chequeo?
+[ 193.86s]    caller: Would you like to connect to a Spanish-speaking agent?
+[ 195.32s] assistant: No, está bien así, puedo continuar en este idioma. Entonces, digamos en una o dos semanas, ¿qué disponibilidad tienen?
+[ 207.22s]    caller: No problem.
+[ 209.00s]    caller: How can I assist you today?
+[ 209.84s] assistant: Necesito agendar un chequeo físico, idealmente en las próximas dos semanas. ¿Qué días tienen disponibles?

@@ -4,3 +4,4 @@ __pycache__
 # Call audio is large and is the raw recording; the reports and transcripts
 # next to it are small and worth keeping in the repo.
 recordings/*.wav
+replacements.txt

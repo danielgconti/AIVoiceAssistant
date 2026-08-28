@@ -1,0 +1,25 @@
+[   4.52s]    caller: Call may be recorded for quality and training purposes.
+[   6.66s]    caller: Para español, oprima el dos.
+[  12.60s]    caller: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[  14.34s] assistant: Oh, hi, sorry, I'm trying to book an appointment with my doctor—yeah, it's a bit noisy here, sorry.
+[  28.96s]    caller: No problem. May I have your full name and date of birth?
+[  31.64s] assistant: Sure, it's Jordan Avery Reyes—R, E, Y, E, S—uh, Reyes, no, sorry, that's my maiden name. My date of birth is March—uh, sorry, one second—March 14, 1986.
+[  62.32s]    caller: Just to confirm, I have your name as Jordan Reyes and your date of birth as March 14th, 1986.
+[  64.52s]    caller: Is that correct?
+[  66.14s] assistant: Oh, sorry, no, actually it's Jordan Avery Reyes, and my birthdate is March 14, 1986.
+[  84.84s]    caller: Would you like me to look up your record using your phone number on file? If so, please provide the number you have listed with us.
+[  94.10s]    caller: If you're not sure, I can confirm your name and date of birth again. Which would you prefer?
+[  95.06s] assistant: Let's go with the phone number. It's 555-0142.
+[ 110.90s]    caller: I have your phone number as 555-0142 and your date of birth as March 14th, 1986.
+[ 111.92s]    caller: Is that correct?
+[ 113.32s] assistant: Yes, that’s it. Now, I need to book an appointment. Sorry for the noise, just a sec—
+[ 121.90s]    caller: No problem.
+[ 123.94s]    caller: Let me know when you're ready to continue.
+[ 124.90s] assistant: All right, I'm ready now. I need to book an appointment with Dr. Osei, as soon as possible.
+[ 141.86s]    caller: I can't proceed further right now, but I can make sure our clinic support team follows up with you. Would you like me to connect you to our patient support team?
+[ 143.02s] assistant: Oh, no, I really just need to set the appointment now if we can. The number again is double five five, one forty-two.
+[ 156.50s]    caller: Transferring you now.
+[ 157.34s]    caller: Thank you.
+[ 157.96s] assistant: Oh, wait, sorry, just to confirm, did you get the name right that time?
+[ 162.82s]    caller: Hello, you've reached the Pretty Good AI test line. Goodbye.
+[ 163.42s] assistant: Oh, well, I guess that’s it. Thanks anyway. Bye.

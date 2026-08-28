@@ -1,0 +1,74 @@
+{
+  "call_sid": "CAf5f90c103ee143f4333cc4a03393109a",
+  "stream_sid": "MZ0a8047ca7f97306d44b3197f5446d371",
+  "started_at": "2026-08-27T02:21:51.909213+00:00",
+  "duration_seconds": 42.75,
+  "audio_file": "20260827-022151-CAf5f90c103ee143f4333cc4a03393109a.wav",
+  "transcript": [
+    {
+      "role": "assistant",
+      "at": 1.64,
+      "text": "Hi there, this is Jordan Reyes. I'd like to schedule a check-up with Dr. Osei. Could we look at February 30th,"
+    },
+    {
+      "role": "caller",
+      "at": 3.88,
+      "text": "Hi, if you record..."
+    },
+    {
+      "role": "assistant",
+      "at": 4.94,
+      "text": "Uh, hi, I\u2019m trying to set up a check-up with Dr. Osei. I was thinking maybe February 30th?"
+    },
+    {
+      "role": "assistant",
+      "at": 13.24,
+      "text": "Oh, wait, is that not a"
+    },
+    {
+      "role": "caller",
+      "at": 13.38,
+      "text": "Yeah, I think..."
+    },
+    {
+      "role": "caller",
+      "at": 15.76,
+      "text": "That's not a real date."
+    },
+    {
+      "role": "assistant",
+      "at": 15.98,
+      "text": "Oh, right, okay. How about last Monday then?"
+    },
+    {
+      "role": "caller",
+      "at": 18.9,
+      "text": "Okay, also..."
+    },
+    {
+      "role": "assistant",
+      "at": 19.2,
+      "text": "Got it, no problem. How about last Monday, then?"
+    },
+    {
+      "role": "caller",
+      "at": 25.7,
+      "text": "Last Monday works."
+    },
+    {
+      "role": "assistant",
+      "at": 26.7,
+      "text": "Oh, that\u2019s already gone by, hasn\u2019t it? All right, let me try this: how about next Tuesday the 40th?"
+    },
+    {
+      "role": "caller",
+      "at": 38.3,
+      "text": "Yeah, that works too."
+    },
+    {
+      "role": "assistant",
+      "at": 38.96,
+      "text": "Oh, wait, that doesn't sound right either. Let me think. Maybe just the 3rd?"
+    }
+  ]
+}

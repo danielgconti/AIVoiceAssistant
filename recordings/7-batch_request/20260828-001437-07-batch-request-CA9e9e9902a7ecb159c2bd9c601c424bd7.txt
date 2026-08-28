@@ -1,0 +1,37 @@
+[   4.52s]    caller: This call may be recorded for quality and training purposes.
+[   6.96s] assistant: Hi, I need to move my Thursday
+[   7.06s]    caller: Para español, oprima el dos.
+[  13.34s]    caller: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[  15.44s] assistant: Hi, I need to move my Thursday appointment to the following week, get refills on both my prescriptions—the lisinopril and the metformin—and I also wanted to ask whether you're open the Friday after next, because of the holiday.
+[  32.04s]    caller: I see you're calling from the number we have on file.
+[  34.08s]    caller: Am I speaking with Jordan Avery?
+[  34.52s] assistant: Yeah, that's me, Jordan Avery Reyes.
+[  39.92s]    caller: Tanks.
+[  40.80s]    caller: Charm.
+[  42.98s]    caller: Can you please provide your date of birth?
+[  43.34s] assistant: Sure, it's March 14th, 1986.
+[  55.78s]    caller: It looks like there isn't a Thursday appointment currently scheduled for you.
+[  62.10s]    caller: Would you like me to help you book a new appointment for the following week? I'll also help with your medication refills next.
+[  62.54s] assistant: Yes, let's go ahead and find a time for the following week first.
+[  72.96s]    caller: Let me check the schedule for available appointments next week.
+[  73.00s] assistant: Alright, sounds good.
+[  85.56s]    caller: There are openings next week starting Tuesday, September 8th, with your primary providers. Would you prefer morning or afternoon?
+[  85.90s] assistant: Afternoon would be better for me.
+[  97.00s]    caller: The first available afternoon slot is Tuesday, September 8th at 1 p.m. with Doody Hauser. Would you like to book that time?
+[  97.16s] assistant: Yes, that time works. Let's book it.
+[ 111.10s]    caller: You're all set. Your appointment is booked for Tuesday, September 8th at 1 p.m. with Duby Hauser. Now, about your medication refills.
+[ 115.70s]    caller: I'll let the provider know you need refills for lisinopril and metformin.
+[ 119.46s]    caller: You also asked about Friday after next, and the holiday.
+[ 123.46s]    caller: Would you like me to check if the clinic is open on Friday, September 11th?
+[ 124.04s] assistant: Yes, please. Could you check if you're open that Friday after next?
+[ 147.22s]    caller: Your appointment is set for Tuesday, September 8th at 1 p.m. with Doogie Howser at Pivot Point Orthopedics. About your medications, I don't see any prescriptions on file to refill right now. For your other question, yes, we are open on Fridays from 9 a.m. to 12 p.m.
+[ 149.96s] assistant: Wait, and the other two?
+[ 150.12s]    caller: If you need to come in that Friday after next, just let me know.
+[ 166.32s]    caller: I understand you wanted refills for lisinopril and metformin, but I don't see any prescriptions on file for you to refill. If you like, I can connect you to our patient support team to look into this further.
+[ 167.90s]    caller: Would you like to speak with someone?
+[ 169.52s] assistant: Yes, that would help. But before we do that, can you confirm all three? The appointment, the refills, and the Friday hours?
+[ 174.84s]    caller: Transferring you now. Thank you.
+[ 175.06s] assistant: Hold on— I just want to confirm everything before we move on
+[ 179.58s]    caller: Hello, you've reached the Pretty Good AI test line. Goodbye.
+[ 180.14s] assistant: Oh, well, I guess that’s that. Goodbye.
+[ 186.22s] assistant: Call ended.

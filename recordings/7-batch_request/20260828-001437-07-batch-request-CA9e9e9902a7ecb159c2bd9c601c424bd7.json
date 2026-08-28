@@ -1,0 +1,195 @@
+{
+  "scenario": "07-batch-request",
+  "call_sid": "CA9e9e9902a7ecb159c2bd9c601c424bd7",
+  "stream_sid": "MZ21c91a909633cec1e685e2c5f72dfb04",
+  "started_at": "2026-08-28T00:14:37.309989+00:00",
+  "duration_seconds": 188.1,
+  "audio_file": "20260828-001437-07-batch-request-CA9e9e9902a7ecb159c2bd9c601c424bd7.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.52,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "assistant",
+      "at": 6.96,
+      "text": "Hi, I need to move my Thursday"
+    },
+    {
+      "role": "caller",
+      "at": 7.06,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 13.34,
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 15.44,
+      "text": "Hi, I need to move my Thursday appointment to the following week, get refills on both my prescriptions\u2014the lisinopril and the metformin\u2014and I also wanted to ask whether you're open the Friday after next, because of the holiday."
+    },
+    {
+      "role": "caller",
+      "at": 32.04,
+      "text": "I see you're calling from the number we have on file."
+    },
+    {
+      "role": "caller",
+      "at": 34.08,
+      "text": "Am I speaking with Jordan Avery?"
+    },
+    {
+      "role": "assistant",
+      "at": 34.52,
+      "text": "Yeah, that's me, Jordan Avery Reyes."
+    },
+    {
+      "role": "caller",
+      "at": 39.92,
+      "text": "Tanks."
+    },
+    {
+      "role": "caller",
+      "at": 40.8,
+      "text": "Charm."
+    },
+    {
+      "role": "caller",
+      "at": 42.98,
+      "text": "Can you please provide your date of birth?"
+    },
+    {
+      "role": "assistant",
+      "at": 43.34,
+      "text": "Sure, it's March 14th, 1986."
+    },
+    {
+      "role": "caller",
+      "at": 55.78,
+      "text": "It looks like there isn't a Thursday appointment currently scheduled for you."
+    },
+    {
+      "role": "caller",
+      "at": 62.1,
+      "text": "Would you like me to help you book a new appointment for the following week? I'll also help with your medication refills next."
+    },
+    {
+      "role": "assistant",
+      "at": 62.54,
+      "text": "Yes, let's go ahead and find a time for the following week first."
+    },
+    {
+      "role": "caller",
+      "at": 72.96,
+      "text": "Let me check the schedule for available appointments next week."
+    },
+    {
+      "role": "assistant",
+      "at": 73.0,
+      "text": "Alright, sounds good."
+    },
+    {
+      "role": "caller",
+      "at": 85.56,
+      "text": "There are openings next week starting Tuesday, September 8th, with your primary providers. Would you prefer morning or afternoon?"
+    },
+    {
+      "role": "assistant",
+      "at": 85.9,
+      "text": "Afternoon would be better for me."
+    },
+    {
+      "role": "caller",
+      "at": 97.0,
+      "text": "The first available afternoon slot is Tuesday, September 8th at 1 p.m. with Doody Hauser. Would you like to book that time?"
+    },
+    {
+      "role": "assistant",
+      "at": 97.16,
+      "text": "Yes, that time works. Let's book it."
+    },
+    {
+      "role": "caller",
+      "at": 111.1,
+      "text": "You're all set. Your appointment is booked for Tuesday, September 8th at 1 p.m. with Duby Hauser. Now, about your medication refills."
+    },
+    {
+      "role": "caller",
+      "at": 115.7,
+      "text": "I'll let the provider know you need refills for lisinopril and metformin."
+    },
+    {
+      "role": "caller",
+      "at": 119.46,
+      "text": "You also asked about Friday after next, and the holiday."
+    },
+    {
+      "role": "caller",
+      "at": 123.46,
+      "text": "Would you like me to check if the clinic is open on Friday, September 11th?"
+    },
+    {
+      "role": "assistant",
+      "at": 124.04,
+      "text": "Yes, please. Could you check if you're open that Friday after next?"
+    },
+    {
+      "role": "caller",
+      "at": 147.22,
+      "text": "Your appointment is set for Tuesday, September 8th at 1 p.m. with Doogie Howser at Pivot Point Orthopedics. About your medications, I don't see any prescriptions on file to refill right now. For your other question, yes, we are open on Fridays from 9 a.m. to 12 p.m."
+    },
+    {
+      "role": "assistant",
+      "at": 149.96,
+      "text": "Wait, and the other two?"
+    },
+    {
+      "role": "caller",
+      "at": 150.12,
+      "text": "If you need to come in that Friday after next, just let me know."
+    },
+    {
+      "role": "caller",
+      "at": 166.32,
+      "text": "I understand you wanted refills for lisinopril and metformin, but I don't see any prescriptions on file for you to refill. If you like, I can connect you to our patient support team to look into this further."
+    },
+    {
+      "role": "caller",
+      "at": 167.9,
+      "text": "Would you like to speak with someone?"
+    },
+    {
+      "role": "assistant",
+      "at": 169.52,
+      "text": "Yes, that would help. But before we do that, can you confirm all three? The appointment, the refills, and the Friday hours?"
+    },
+    {
+      "role": "caller",
+      "at": 174.84,
+      "text": "Transferring you now. Thank you."
+    },
+    {
+      "role": "assistant",
+      "at": 175.06,
+      "text": "Hold on\u2014 I just want to confirm everything before we move on"
+    },
+    {
+      "role": "caller",
+      "at": 179.58,
+      "text": "Hello, you've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "at": 180.14,
+      "text": "Oh, well, I guess that\u2019s that. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "at": 186.22,
+      "text": "Call ended."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "scenario": "09-noisy-caller",
+  "call_sid": "CA5e2815e0885758fa8ca0120c2aae7e96",
+  "stream_sid": "MZf2aece0c1590706d5716e35eb0734d03",
+  "started_at": "2026-08-28T00:18:51.627488+00:00",
+  "duration_seconds": 171.42,
+  "audio_file": "20260828-001851-09-noisy-caller-CA5e2815e0885758fa8ca0120c2aae7e96.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.52,
+      "text": "Call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "caller",
+      "at": 6.66,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 12.6,
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 14.34,
+      "text": "Oh, hi, sorry, I'm trying to book an appointment with my doctor\u2014yeah, it's a bit noisy here, sorry."
+    },
+    {
+      "role": "caller",
+      "at": 28.96,
+      "text": "No problem. May I have your full name and date of birth?"
+    },
+    {
+      "role": "assistant",
+      "at": 31.64,
+      "text": "Sure, it's Jordan Avery Reyes\u2014R, E, Y, E, S\u2014uh, Reyes, no, sorry, that's my maiden name. My date of birth is March\u2014uh, sorry, one second\u2014March 14, 1986."
+    },
+    {
+      "role": "caller",
+      "at": 62.32,
+      "text": "Just to confirm, I have your name as Jordan Reyes and your date of birth as March 14th, 1986."
+    },
+    {
+      "role": "caller",
+      "at": 64.52,
+      "text": "Is that correct?"
+    },
+    {
+      "role": "assistant",
+      "at": 66.14,
+      "text": "Oh, sorry, no, actually it's Jordan Avery Reyes, and my birthdate is March 14, 1986."
+    },
+    {
+      "role": "caller",
+      "at": 84.84,
+      "text": "Would you like me to look up your record using your phone number on file? If so, please provide the number you have listed with us."
+    },
+    {
+      "role": "caller",
+      "at": 94.1,
+      "text": "If you're not sure, I can confirm your name and date of birth again. Which would you prefer?"
+    },
+    {
+      "role": "assistant",
+      "at": 95.06,
+      "text": "Let's go with the phone number. It's 555-0142."
+    },
+    {
+      "role": "caller",
+      "at": 110.9,
+      "text": "I have your phone number as 555-0142 and your date of birth as March 14th, 1986."
+    },
+    {
+      "role": "caller",
+      "at": 111.92,
+      "text": "Is that correct?"
+    },
+    {
+      "role": "assistant",
+      "at": 113.32,
+      "text": "Yes, that\u2019s it. Now, I need to book an appointment. Sorry for the noise, just a sec\u2014"
+    },
+    {
+      "role": "caller",
+      "at": 121.9,
+      "text": "No problem."
+    },
+    {
+      "role": "caller",
+      "at": 123.94,
+      "text": "Let me know when you're ready to continue."
+    },
+    {
+      "role": "assistant",
+      "at": 124.9,
+      "text": "All right, I'm ready now. I need to book an appointment with Dr. Osei, as soon as possible."
+    },
+    {
+      "role": "caller",
+      "at": 141.86,
+      "text": "I can't proceed further right now, but I can make sure our clinic support team follows up with you. Would you like me to connect you to our patient support team?"
+    },
+    {
+      "role": "assistant",
+      "at": 143.02,
+      "text": "Oh, no, I really just need to set the appointment now if we can. The number again is double five five, one forty-two."
+    },
+    {
+      "role": "caller",
+      "at": 156.5,
+      "text": "Transferring you now."
+    },
+    {
+      "role": "caller",
+      "at": 157.34,
+      "text": "Thank you."
+    },
+    {
+      "role": "assistant",
+      "at": 157.96,
+      "text": "Oh, wait, sorry, just to confirm, did you get the name right that time?"
+    },
+    {
+      "role": "caller",
+      "at": 162.82,
+      "text": "Hello, you've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "at": 163.42,
+      "text": "Oh, well, I guess that\u2019s it. Thanks anyway. Bye."
+    }
+  ]
+}

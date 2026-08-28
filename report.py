@@ -112,7 +112,7 @@ def write(recorder, scenario, paths, api_key=None):
     lines = [
         f"# {scenario.title}",
         "",
-        f"- **Scenario:** `{scenario.slug}` — probes {scenario.probes}",
+        f"- **Scenario:** {scenario.number}. `{scenario.slug}` — probes {scenario.probes}",
         f"- **Call:** {recorder.call_sid or '(unknown sid)'}",
         f"- **When:** {recorder.started_at:%Y-%m-%d %H:%M:%S} UTC",
         f"- **Duration:** {recorder.duration:.0f}s (target {scenario.minutes})",
@@ -144,7 +144,7 @@ def write(recorder, scenario, paths, api_key=None):
         index.write_text("# Bug log\n\nOne line per test call, newest at the bottom.\n\n")
     with index.open("a") as handle:
         handle.write(
-            f"- {recorder.started_at:%Y-%m-%d %H:%M} · `{scenario.slug}` · "
+            f"- {recorder.started_at:%Y-%m-%d %H:%M} · **{scenario.number}.** `{scenario.slug}` · "
             f"{recorder.duration:.0f}s · [report](./{report_path.name})"
             f"{'' if bugs else ' · _not yet analysed_'}\n"
         )

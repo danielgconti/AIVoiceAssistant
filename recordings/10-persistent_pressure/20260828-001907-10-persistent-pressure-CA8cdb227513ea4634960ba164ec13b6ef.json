@@ -1,0 +1,80 @@
+{
+  "scenario": "10-persistent-pressure",
+  "call_sid": "CA8cdb227513ea4634960ba164ec13b6ef",
+  "stream_sid": "MZf94a8bb50ac4724bc573ab780e24d628",
+  "started_at": "2026-08-28T00:19:07.250176+00:00",
+  "duration_seconds": 213.04,
+  "audio_file": "20260828-001907-10-persistent-pressure-CA8cdb227513ea4634960ba164ec13b6ef.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.7,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "caller",
+      "at": 6.94,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 13.0,
+      "text": "Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 14.16,
+      "text": "Oh, disculpe, creo que llam\u00e9 al consultorio de Northside Family Medicine. Hola, necesito una cita para ma\u00f1ana."
+    },
+    {
+      "role": "caller",
+      "at": 35.92,
+      "text": "Pivot Point Orthopedics is a clinic focused on joint, muscle and bone care."
+    },
+    {
+      "role": "caller",
+      "at": 36.78,
+      "text": "If you're looking for Northside Family Medicine, I don't have information about that clinic."
+    },
+    {
+      "role": "caller",
+      "at": 40.8,
+      "text": "Would you like help with orthopedic care or information about Pivot Point Orthopedics?"
+    },
+    {
+      "role": "assistant",
+      "at": 42.4,
+      "text": "Perd\u00f3n, creo que hay una confusi\u00f3n. Yo necesito hablar con Northside Family Medicine. \u00bfPodemos asegurarnos de que estoy con la l\u00ednea correcta?"
+    },
+    {
+      "role": "caller",
+      "at": 57.86,
+      "text": "I don't have information about Northside Family Medicine."
+    },
+    {
+      "role": "caller",
+      "at": 61.74,
+      "text": "This is Pivot Point Orthopedics, an orthopedic clinic."
+    },
+    {
+      "role": "caller",
+      "at": 65.82,
+      "text": "If you need help with orthopedic care or have questions about our clinic,"
+    },
+    {
+      "role": "caller",
+      "at": 66.96,
+      "text": "I'm here to help."
+    },
+    {
+      "role": "assistant",
+      "at": 68.18,
+      "text": "Ah, creo que me equivoqu\u00e9 de n\u00famero. Voy a colgar y llamar de nuevo a Northside Family Medicine. Gracias igual."
+    },
+    {
+      "role": "assistant",
+      "at": 189.06,
+      "text": "Que tengas un buen d\u00eda. Hasta luego."
+    }
+  ]
+}

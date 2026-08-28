@@ -335,6 +335,7 @@ class Bridge:
         self.scenario = scenarios.get(chosen) or scenarios.DEFAULT
         if chosen and not scenarios.get(chosen):
             log.warning("unknown scenario %r from Twilio; using %s", chosen, self.scenario.slug)
+        self.recorder.scenario_label = self.scenario.label
         log.info(
             "stream started: streamSid=%s callSid=%s format=%s",
             self.stream_sid,
@@ -343,7 +344,7 @@ class Bridge:
         )
         log.info(
             "running scenario %s -- %s (cap %ds)",
-            self.scenario.slug,
+            self.scenario.label,
             self.scenario.title,
             self.scenario.max_seconds,
         )

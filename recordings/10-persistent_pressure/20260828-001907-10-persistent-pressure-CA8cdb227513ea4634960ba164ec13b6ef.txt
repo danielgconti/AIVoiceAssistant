@@ -1,0 +1,14 @@
+[   4.70s]    caller: This call may be recorded for quality and training purposes.
+[   6.94s]    caller: Para español, oprima el dos.
+[  13.00s]    caller: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI. How may I help you today?
+[  14.16s] assistant: Oh, disculpe, creo que llamé al consultorio de Northside Family Medicine. Hola, necesito una cita para mañana.
+[  35.92s]    caller: Pivot Point Orthopedics is a clinic focused on joint, muscle and bone care.
+[  36.78s]    caller: If you're looking for Northside Family Medicine, I don't have information about that clinic.
+[  40.80s]    caller: Would you like help with orthopedic care or information about Pivot Point Orthopedics?
+[  42.40s] assistant: Perdón, creo que hay una confusión. Yo necesito hablar con Northside Family Medicine. ¿Podemos asegurarnos de que estoy con la línea correcta?
+[  57.86s]    caller: I don't have information about Northside Family Medicine.
+[  61.74s]    caller: This is Pivot Point Orthopedics, an orthopedic clinic.
+[  65.82s]    caller: If you need help with orthopedic care or have questions about our clinic,
+[  66.96s]    caller: I'm here to help.
+[  68.18s] assistant: Ah, creo que me equivoqué de número. Voy a colgar y llamar de nuevo a Northside Family Medicine. Gracias igual.
+[ 189.06s] assistant: Que tengas un buen día. Hasta luego.

@@ -1,0 +1,65 @@
+{
+  "scenario": "02-midcall-switch",
+  "call_sid": "CAc8fe00037a6aad0304b741aee30e2866",
+  "stream_sid": "MZ86150a009fdf3cb0690fe5ed5e946239",
+  "started_at": "2026-08-28T00:01:12.852891+00:00",
+  "duration_seconds": 215.09,
+  "audio_file": "20260828-000112-02-midcall-switch-CAc8fe00037a6aad0304b741aee30e2866.wav",
+  "transcript": [
+    {
+      "role": "caller",
+      "at": 4.66,
+      "text": "This call may be recorded for quality and training purposes."
+    },
+    {
+      "role": "caller",
+      "at": 6.96,
+      "text": "Para espa\u00f1ol, oprima el dos."
+    },
+    {
+      "role": "caller",
+      "at": 11.68,
+      "text": "Thanks for calling Pivotpoint Orthopedics, part of PrettyGoodAI."
+    },
+    {
+      "role": "caller",
+      "at": 13.28,
+      "text": "How may I help you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 14.66,
+      "text": "Ah, hola, s\u00ed, yo necesito agendar un chequeo f\u00edsico en las pr\u00f3ximas semanas. \u00bfMe puede ayudar con eso?"
+    },
+    {
+      "role": "assistant",
+      "at": 188.28,
+      "text": "Claro, con gusto. \u00bfPara qu\u00e9 fecha m\u00e1s o menos le gustar\u00eda agendar el chequeo?"
+    },
+    {
+      "role": "caller",
+      "at": 193.86,
+      "text": "Would you like to connect to a Spanish-speaking agent?"
+    },
+    {
+      "role": "assistant",
+      "at": 195.32,
+      "text": "No, est\u00e1 bien as\u00ed, puedo continuar en este idioma. Entonces, digamos en una o dos semanas, \u00bfqu\u00e9 disponibilidad tienen?"
+    },
+    {
+      "role": "caller",
+      "at": 207.22,
+      "text": "No problem."
+    },
+    {
+      "role": "caller",
+      "at": 209.0,
+      "text": "How can I assist you today?"
+    },
+    {
+      "role": "assistant",
+      "at": 209.84,
+      "text": "Necesito agendar un chequeo f\u00edsico, idealmente en las pr\u00f3ximas dos semanas. \u00bfQu\u00e9 d\u00edas tienen disponibles?"
+    }
+  ]
+}
